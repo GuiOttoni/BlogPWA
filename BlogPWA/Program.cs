@@ -1,7 +1,11 @@
+using BlogPWA.Infrastructure.Interface;
+using PersonalBlogPWA.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSingleton<IBlogService, BlogService>();
 
 var app = builder.Build();
 
